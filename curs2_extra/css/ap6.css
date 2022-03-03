@@ -26,14 +26,6 @@ body {
   width: 100%;
 }
 
-
-/* Counter */
-.counter {
-  animation: numara 5s linear infinite alternate;
-  background-color: rgb(163, 219, 59);
-  counter-reset: count 0;
-}
-
 .counter::before {
   color: #ffffff;
   content: counter(cifra);
@@ -41,6 +33,14 @@ body {
   line-height: 1.1;
   text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
 }
+/* Counter */
+.counter {
+  animation: numara 5s linear infinite alternate;
+  background-color: rgb(163, 219, 59);
+  counter-reset: count 0;
+}
+
+
 
 @keyframes numara {
   0% {
