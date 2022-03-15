@@ -14,8 +14,8 @@
   --mycolor: #d1550d;
   --mybackground: #161625;
   --secondary-color: #6307af;
-  --font-color: #e1e1ff;
-  --heading-color: #818cab;
+  --font-color: #ff0202;
+  --heading-color: #f130166c;
   --bs-body-bg:#0c0b0c;
   --secondary-bg:#090a0aea;
 }
@@ -125,27 +125,27 @@ h1, h2, h3, h4, h5, h6 {
 # Top Bar
 --------------------------------------------------------------*/
 /*slider switch css */
-.theme-switch-wrapper {
+#myid.theme-switch-wrapper {
   display: flex;
   align-items: center;
   margin: 0 15px;
 }
-.theme-switch-wrapper em {
+#myid.theme-switch-wrapper em {
     margin-left: 10px;
     font-size: 1rem;
   }
-.theme-switch {
+  #myid .theme-switch {
   display: inline-block;
   height: 27px;
   position: relative;
   width: 55px;
 }
 
-.theme-switch input {
+#myid .theme-switch input {
   display:none;
 }
 
-.slider {
+#myid .slider {
   background-color: #ccc;
   bottom: 0;
   cursor: pointer;
@@ -156,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: .4s;
 }
 
-.slider:before {
+#myid .slider:before {
   background-color: #fff;
   bottom: 4px;
   content: "";
@@ -167,19 +167,19 @@ h1, h2, h3, h4, h5, h6 {
   width: 20px;
 }
 
-input:checked + .slider {
+#myid input:checked + .slider {
   background-color: #66bb6a;
 }
 
-input:checked + .slider:before {
+#myid input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-.slider.round {
+#myid .slider.round {
   border-radius: 34px;
 }
 
-.slider.round:before {
+#myid .slider.round:before {
   border-radius: 50%;
 }
 /* end slider switch css */
