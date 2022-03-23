@@ -48,7 +48,10 @@ function watch_scss() {
 function watch_js() {
   return gulp.watch(['dev/js/main.js'], gulp.series(jstomin));
 }
+
+//ca sa rulam automat optimizare css gulp buildcss
 exports.buildcss = gulp.series(watch_scss);
+//ca sa rulam automat optimizare js gulp buildjs
 exports.buildjs = gulp.series(watch_js);
 
 // optional pentru imagini : gulp images
