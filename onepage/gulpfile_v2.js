@@ -7,15 +7,15 @@ const cleanCSS = require('gulp-clean-css');
 var minify = require('gulp-minify');
 var concat = require('gulp-concat');
 // ca sa transformam fisiere sass/scss in fisiere css: gulp sass
- function sasstocss() {
+gulp.task("sass", function () {
   return gulp
     .src("dev/scss/style.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest("dev/css"));
-}
+});
 
 // ca sa optimizam fisierele css : gulp css
-function csstomin () {
+gulp.task("css", () => {
   return gulp
     .src("dev/css/style.css")
 
@@ -31,25 +31,21 @@ function csstomin () {
       })
     )
     .pipe(gulp.dest("assets/css/"));
-}
+});
 // ca sa optimizam fisierele js : gulp css
-function jstomin(){    
-  return gulp.src(['dev/js/main.js'])
+gulp.task('pack-js', function () {    
+  return gulp.src(['dev/js/*.js'])
       .pipe(concat('custom.js'))
-      .pipe(gulp.dest('dev/js'))
+      .pipe(gulp.dest('assets/js'))
       .pipe(minify())
       .pipe(gulp.dest('assets/js'));
-}
+});
 
 // genereaza in mod automat fisierul css la modificarile diin fisierele scss
-function watch_scss() {
-  return gulp.watch(['dev/scss/style.scss'], gulp.series(sasstocss,csstomin));
-}
-function watch_js() {
-  return gulp.watch(['dev/js/main.js'], gulp.series(jstomin));
-}
-exports.buildcss = gulp.series(watch_scss);
-exports.buildjs = gulp.series(watch_js);
+gulp.task('sass:watch', function () {
+  gulp.watch('dev/scss/style.scss', gulp.series('sass','css'));
+  
+});
 
 // optional pentru imagini : gulp images
 /*
